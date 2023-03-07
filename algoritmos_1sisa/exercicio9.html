@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(107, 196, 212);
+        margin-top: 100px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(26, 0, 93);
+        color: aliceblue;
+        width: 350px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Média SPTECH </b></h2> 
+        Digite seu nome: <input type="text" id="input_nome" placeholder="Digite seu nome"> 
+        <br><br>
+        Nota da continuada: <input type="number" id="input_continuada" placeholder="Digite sua média da continuada"> 
+        <br><br>
+        Nota da semestral: <input type="number" id="input_semestral" placeholder="Digite sua média da semestral"> 
+        <br><br>
+        <button onclick="calcular_media()"> Calcular média! </button>
+        <br><br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_media() {
+        var nome = input_nome.value;
+
+        var nota_continuada = Number(input_continuada.value);
+
+        var nota_semestral = Number(input_semestral.value);
+
+        var media = (nota_continuada * 0.4) + (nota_semestral * 0.6); 
+
+        alert("A média de " + nome + " será de " + media + "!");
+    }
+
+</script> 

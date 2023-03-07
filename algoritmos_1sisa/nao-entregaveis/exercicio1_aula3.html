@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 - Aula 3</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(107, 196, 212);
+        margin-top: 100px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(26, 0, 93);
+        color: aliceblue;
+        width: 350px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Fases do sono </b></h2> 
+        Digite quantas horas você dormiu:<br><br> <input type="number" id="input_horas" placeholder="Digite a quantidade de horas"> 
+        <br><br>
+        <button onclick="calcular_sono()"> Calcular sono! </button>
+        <div id="div_resultado"></div>
+        <br><br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_sono() {
+        var horas = Number(input_horas.value);
+
+        var fase1 = horas * 0.05;
+
+        var fase2 = horas * 0.45;
+
+        var fase3 = horas * 0.3;
+        
+        var fase_rem = horas * 0.2;
+
+        div_resultado.innerHTML =  (`
+        <br> Ao dormir ${horas} horas, você dormiu: <br>
+        -> ${fase1} horas na <b>fase 1</b><br>
+        -> ${fase2} horas na <b>fase 2</b><br>
+        -> ${fase3} horas na <b>fase 3</b><br>
+        -> ${fase_rem} horas na <b>fase REM.</b> 
+        `);
+
+    }
+
+</script> 

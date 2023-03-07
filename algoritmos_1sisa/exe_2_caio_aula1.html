@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Caio - Exercicio 2</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap');
+    .card {
+        font-family: 'Fira Sans', sans-serif;
+        font-family: 'Merriweather', serif;
+        background-color: cornflowerblue;
+        margin-top: 100px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: blue;
+        color: aliceblue;
+        width: 350px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <h3><b> Média Aritmética Ponderada</b></h3>
+        N1: <input type="number" id="input_n1"> 
+        <br><br>
+        N2: <input type="number" id="input_n2"> 
+        <br><br>
+        N3: <input type="number" id="input_n3"> 
+        <br><br>
+        <button onclick="ver_media_pond()"> Ver médias das continuadas! </button>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function ver_media_pond() {
+        alert("A sua média é: " + (((Number(input_n1.value) * 2) + (Number(input_n2.value) * 4) + (Number(input_n3.value) * 4))/(2+2+4)));
+    }
+
+</script>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 - Estr. Decisão </title>
+</head>
+<style>
+    .card {
+        background-color: rgb(255, 252, 151);
+        margin-top: 100px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        color: rgb(0, 0, 0);
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(188, 182, 11);
+        color: rgb(255, 255, 255);
+        width: 170px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+    input {
+        width: 200px;
+        height: 40px;   
+        border-radius: 15px;
+        border-style: none;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Refrigerante </b></h2> 
+        Quantidade de latinhas por dia: <br><input type="number" id="input_qnt_latinhas" placeholder="Digite a quantidade aqui"> 
+        <br><br>
+        <button onclick="calcular()"> Quantos refris? </button>
+        <br><br>
+        <div id="div_resultado"></div>
+        <br>
+    </div>
+</body>
+</html>
+
+<script>
+
+function calcular() {
+        var qnt_refri_dia = Number(input_qnt_latinhas.value);
+
+        var qnt_refri_ano = qnt_refri_dia * 365;
+
+        div_resultado.innerHTML = (`
+            Considerando um ano de 365 dias, você consumiu <b>${qnt_refri_ano}</b> latinhas no ano.
+        `);
+
+        if (qnt_refri_ano >= 500) {
+            div_resultado.innerHTML += "Cuidado com a diabetes!"
+        }
+        
+    }
+
+</script>

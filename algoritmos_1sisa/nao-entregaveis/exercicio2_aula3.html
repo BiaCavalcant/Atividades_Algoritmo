@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 - Aula 3</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(169, 249, 160);
+        margin-top: 2px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        color: rgb(0, 0, 0);
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(235, 255, 20);
+        color: black;
+        width: 170px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+    input {
+        width: 200px;
+        height: 40px;   
+        border-radius: 15px;
+        border-style: none;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Eleições </b></h2> 
+        Quantidade de votos do candidato A: <input type="number" id="input_votosA" placeholder="Digite a quantidade votos aqui"> 
+        <br><br>
+        Quantidade de votos do candidato B: <input type="number" id="input_votosB" placeholder="Digite a quantidade votos aqui"> 
+        <br><br>
+        Quantidade de votos em branco: <input type="number" id="input_votos_branco" placeholder="Digite a quantidade votos aqui"> 
+        <br><br>
+        Quantidade de votos nulos: <br><input type="number" id="input_votos_nulos" placeholder="Digite a quantidade votos aqui"> 
+        <br><br>
+        <button onclick="calcular_votos()"> Resultado da eleicão! </button>
+        <div id="div_resultado"></div>
+        <br><br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_votos() {
+        var votos_cand_A = Number(input_votosA.value);
+        var votos_cand_B = Number(input_votosB.value);
+        var votos_branco = Number(input_votos_branco.value);
+        var votos_nulos = Number(input_votos_nulos.value);
+
+        var votos_invalidos = votos_branco + votos_nulos;
+        var total_votos = votos_cand_A + votos_cand_B + votos_invalidos;
+
+        var porcentagem_A = ((100 * votos_cand_A) / total_votos) + "%";
+        var porcentagem_B = ((100 * votos_cand_B) / total_votos) + "%";
+        var porcentagem_invalidos = ((100 * votos_invalidos) / total_votos) + "%";
+
+        div_resultado.innerHTML =  (`
+        <br> <b>Total de votos <u>${total_votos}</u></b><br>
+        -> <b>Canditado A = </b> ${porcentagem_A} (${votos_cand_A})<br>
+        -> <b>Canditado B = </b> ${porcentagem_B} (${votos_cand_B}) <br>
+        -> <b>Inválidos = </b> ${porcentagem_invalidos}(${votos_invalidos}) <br>
+        `);
+
+    }
+
+</script> 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 - Aula 3</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(249, 160, 219);
+        margin-top: 10px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        color: rgb(0, 0, 0);
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(255, 20, 157);
+        color: black;
+        width: 170px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+    input {
+        width: 200px;
+        height: 40px;   
+        border-radius: 15px;
+        border-style: none;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Tabuada :) </b></h2> 
+        Digite um número: <input type="number" id="input_numero" placeholder="Digite o número aqui :)"> 
+        <br><br>
+        <button onclick="calcular_tabuada()"> Ver tabuada! </button>
+        <br><br>
+        <div id="div_resultado"></div>
+        <br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_tabuada() {
+        var numero = Number(input_numero.value);
+
+        div_resultado.innerHTML =  (`
+        <h3>
+        ${numero} x 1 = ${numero*1}<br>
+        ${numero} x 2 = ${numero*2}<br>
+        ${numero} x 3 = ${numero*3}<br>
+        ${numero} x 4 = ${numero*4}<br>
+        ${numero} x 5 = ${numero*5}<br>
+        ${numero} x 6 = ${numero*6}<br>
+        ${numero} x 7 = ${numero*7}<br>
+        ${numero} x 8 = ${numero*8}<br>
+        ${numero} x 9 = ${numero*9}
+        </h3>
+        `);
+
+    }
+
+</script> 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4 - Aula 3</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(246, 236, 120);
+        margin-top: 30px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        color: rgb(0, 0, 0);
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(158, 25, 25);
+        color: rgb(255, 255, 255);
+        width: 170px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+    input {
+        width: 200px;
+        height: 40px;   
+        border-radius: 15px;
+        border-style: none;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Pizza! </b></h2> 
+        Digite o sabor da pizza: <input type="text" id="input_sabor" placeholder="Digite o sabor aqui :)"> 
+        <br><br>
+        Digite o preço da pizza: <input type="number" id="input_preco" placeholder="Digite o preco aqui :)"> 
+        <br><br>
+        Quantidade de amigos: <input type="number" id="input_quant" placeholder="Digite o quantidade aqui :)"> 
+        <br><br>
+        <button onclick="calcular_pizza()"> Ver valor por amigo! </button>
+        <br><br>
+        <div id="div_resultado"></div>
+        <br><br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_pizza() {
+        var preco = Number(input_preco.value);
+        var amigos = Number(input_quant.value);
+        var sabor = input_sabor.value;
+
+        var divisao = (preco + preco * 0.1) / amigos;
+
+        div_resultado.innerHTML =  (`
+        Cada amigo vai colaborar com R$${divisao} para a pizza de ${sabor}.
+        `);
+
+    }
+
+</script> 

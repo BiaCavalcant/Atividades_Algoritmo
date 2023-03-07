@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(100, 237, 189);
+        margin-top: 100px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(35, 129, 93);
+        color: aliceblue;
+        width: 350px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+</style>
+<body>
+    
+    <br><br>
+    <div class="card">
+        <br>
+        <h2><b> Bilhete Único Estudante </b></h2> 
+        Valor da passagem atualmente: <input type="number" id="input_passagem" placeholder="Digite o valor da passagem"> 
+        <br><br>
+        Quantidade de viagens no mês: <input type="number" id="input_quantidade_mes" placeholder="Digite a qnt de viagens ao mês"> 
+        <br><br>
+        <button onclick="calcular_economia_passagem()"> #Economizar! </button>
+        <br><br>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular_economia_passagem() {
+        var valor_passagem = Number(input_passagem.value);
+
+        var qnt_mes = Number(input_quantidade_mes.value);
+
+        var passagem_inteira = valor_passagem * qnt_mes;
+
+        var meia_passagem = (valor_passagem * qnt_mes) / 2;
+
+        var economia = passagem_inteira - meia_passagem;
+
+        alert("Você economizará cerca de " + economia + " R$!");
+    }
+
+</script> 
