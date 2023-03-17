@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(71, 140, 62);
+        margin-top: 130px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        color: rgb(0, 0, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body{
+        background-image: url('https://images.freeimages.com/images/premium/previews/1692/16922664-dollar-pattern.jpg');
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(0, 81, 4);
+        color: rgb(255, 255, 255);
+        width: 170px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+    input {
+        width: 200px;
+        height: 40px;   
+        border-radius: 15px;
+        border-style: none;
+    }
+</style>
+<body>
+    <div class="card">
+        <br>
+        <h1>Poder de Compra</h1>
+        Digite o valor economizado:
+        <br><br>
+        <input id="inputValor"> 
+        <br><br>
+        <button onclick="analisar()">
+            Poder de Compra
+        </button>
+        <br><br>
+        <div id="div_resultado"></div>
+        <br>
+    </div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var economia = Number(inputValor.value)
+    
+        if (economia <= 0){
+            div_resultado.innerHTML = `
+                Nada de compras 😒!
+            `
+        } else if (economia <= 100){
+            div_resultado.innerHTML = `
+                Viajem de ida e volta pra Praia Grande🏖️!
+            `
+        } else if(economia <=4000){
+            div_resultado.innerHTML = `
+                Viajem de ida e volta pra Praia Grande🏖️!<br>
+                Uma boa moto usada.
+            `
+        } else {
+            div_resultado.innerHTML = `
+                Viajem de ida e volta pra Praia Grande🏖️! <br>
+                Uma boa moto usada. <br>
+                Mais alguma bobagem legal.
+            `
+        }
+    }
+</script>

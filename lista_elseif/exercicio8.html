@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<style>
+    .card {
+        background-color: rgb(115, 198, 103);
+        margin-top: 50px;
+        margin-left: 455px;
+        width: 350px;
+        height: auto;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 10px 4px rgba(0,0,0,0.2);
+        transition: 0.3s;
+        color: rgb(0, 0, 0);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body{
+        background-image: url('https://pratiquefitness.com.br/blog/wp-content/uploads/2022/03/destaque.jpeg');
+    }
+
+    .card:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+        background-color: rgb(255, 169, 21);
+        color: rgb(255, 255, 255);
+        width: 170px;
+        height: 50px;
+        border-style: none;
+        border-radius: 20px;
+    }
+    button:hover {
+        box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+    }
+    input {
+        width: 200px;
+        height: 40px;   
+        border-radius: 15px;
+        border-style: none;
+    }
+</style>
+<body>
+    <div class="card">
+        <br>
+        <h1>Calorias</h1>
+        Quantidade de pão francês:
+        <br><br>
+        <input id="inputPao"> 
+        <br><br>
+        Pacotes de Bolacha:
+        <br><br>
+        <input id="inputCookie"> 
+        <br><br>
+        Copos de Achocolatado:
+        <br><br>
+        <input id="inputAchoc"> 
+        <br><br>
+        <button onclick="analisar_calorias()">
+            Verificar Calorias
+        </button>
+        <br><br>
+        <div id="div_resultado"></div>
+        <br>
+    </div>
+</body>
+</html>
+
+<script>
+    function analisar_calorias(){
+        var paos = Number(inputPao.value)
+        var pctBolacha = Number(inputCookie.value)
+        var coposAchoc = Number(inputAchoc.value)
+    
+       var calorias = (paos*50) + (pctBolacha*80) + (coposAchoc*70)
+
+       if(calorias<200){
+            div_resultado.innerHTML = `
+                Parabéns, vai sair em forma da quarentena!
+            `
+       } else if(calorias<400){
+            div_resultado.innerHTML = `
+                Cuidado, vai ficar mais "fofinho(a)" após quarentena!
+            `
+       } else {
+            div_resultado.innerHTML = `
+                Bom, acho que muitos não vão te reconhecer após a quarentena
+            `
+       }
+    }
+</script>
